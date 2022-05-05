@@ -1,6 +1,6 @@
 from django.views.generic import CreateView
 
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.views import LoginView
 
@@ -31,3 +31,6 @@ class SignUpView(CreateView):
 class CustomLoginView(LoginView):
     
     template_name = 'users/login.html'
+
+def logout_view(request):
+    logout(request)
